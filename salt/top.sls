@@ -1,6 +1,6 @@
 base:
   '*':
     - common
-  'minion*':
+  'app-*':
     - app
     - nginx
