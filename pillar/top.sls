@@ -1,5 +1,5 @@
 base:
-  'minion*':
+  'app-*':
     - default
 
 
