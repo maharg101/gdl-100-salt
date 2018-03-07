@@ -1,0 +1,9 @@
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+# socket location - see https://github.com/benoitc/gunicorn/issues/1524
+ListenStream=/tmp/gunicorn.socket
+
+[Install]
+WantedBy=sockets.target
