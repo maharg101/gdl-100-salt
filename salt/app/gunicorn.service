@@ -1,0 +1,23 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+PIDFile=/run/gunicorn/pid
+User=blog
+Group=www-data
+RuntimeDirectory=gunicorn
+WorkingDirectory=/home/blog/app
+Environment=GDL_100_APP_SETTINGS=default_settings.py
+# socket location - see https://github.com/benoitc/gunicorn/issues/1524
+ExecStart=/home/blog/app/venv/bin/gunicorn \
+          --pid /run/gunicorn/pid   \
+          --bind unix:/tmp/gunicorn.socket \
+          gdl_100_app.blog:app
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
