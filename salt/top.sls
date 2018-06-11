@@ -5,5 +5,5 @@ base:
     - app
     - nginx
   'vrrp-primary,vrrp-secondary':
-    - match: lisr
+    - match: list
     - keepalived
