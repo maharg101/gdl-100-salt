@@ -1,8 +1,9 @@
 install keepalived et al:
   pkg.installed:
-    - name: keepalived
-    - name: python2.7
-    - name: python-neutronclient
+    - pkgs
+      - name: keepalived
+      - name: python2.7
+      - name: python-neutronclient
 /etc/keepalived:
   file.directory:
     - user: root
