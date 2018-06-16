@@ -3,6 +3,11 @@ install keepalived et al:
     - name: keepalived
     - name: python2.7
     - name: python-neutronclient
+/etc/keepalived:
+  file.directory:
+    - user: root
+    - group: root
+    - dir_mode: 755
 /etc/keepalived/failover-primary-to-secondary.sh:
   file.managed:
     - source: salt://keepalived/failover-primary-to-secondary.sh
