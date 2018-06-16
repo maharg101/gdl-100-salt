@@ -21,9 +21,9 @@ install keepalived et al:
     - user: root
     - group: root
     - mode: 755
-/etc/keepalived/keepalived.conf
+/etc/keepalived/keepalived.conf:
   file.managed:
-    - source: salt://keepalived/{{ keepalive_conf_source }}
+    - source: salt://keepalived/{{ pillar['keepalive_conf_source'] }}
     - user: root
     - group: root
     - mode: 644
