@@ -1,6 +1,6 @@
 install keepalived et al:
   pkg.installed:
-    - pkgs
+    - pkgs:
       - name: keepalived
       - name: python2.7
       - name: python-neutronclient
