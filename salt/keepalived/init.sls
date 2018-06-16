@@ -25,6 +25,7 @@ install keepalived et al:
     - user: root
     - group: root
     - dir_mode: 755
+    - makedirs: True
 /root/.config/openstack/clouds.yaml:
   file.managed:
     - source: salt://keepalived/clouds.yaml
@@ -38,4 +39,3 @@ keepalived enabled and running:
     - watch:
       - file: /etc/keepalived/failover-primary-to-secondary.sh
       - file: /etc/keepalived/failover-secondary-to-primary.sh
-      - file: /etc/keepalived.conf
