@@ -21,6 +21,12 @@ install keepalived et al:
     - user: root
     - group: root
     - mode: 755
+/etc/keepalived/keepalived.conf
+  file.managed:
+    - source: salt://keepalived/{{ keepalive_conf_source }}
+    - user: root
+    - group: root
+    - mode: 644
 /root/.config/openstack:
   file.directory:
     - user: root
