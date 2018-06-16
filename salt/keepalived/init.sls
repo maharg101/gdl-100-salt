@@ -20,7 +20,7 @@ install keepalived et al:
     - user: root
     - group: root
     - dir_mode: 755
-/root/.config/openstack/clouds.yaml
+/root/.config/openstack/clouds.yaml:
   file.managed:
     - source: salt://keepalived/clouds.yaml
     - user: root
