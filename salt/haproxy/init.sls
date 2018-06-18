@@ -13,6 +13,8 @@ haproxy enabled and running:
   service.running:
     - name: haproxy
     - enable: True
+    - watch:
+      - file: /etc/haproxy/haproxy.cfg
 syslog:
   service.running:
     - enable: True
