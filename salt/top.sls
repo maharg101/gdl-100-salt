@@ -7,3 +7,4 @@ base:
   'vrrp-primary,vrrp-secondary':
     - match: list
     - keepalived
+    - haproxy
